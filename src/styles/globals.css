@@ -1,0 +1,686 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Retro terminal colors */
+  --retro-bg: #000000;
+  --retro-primary: #00ff00;
+  --retro-secondary: #00cc00;
+  --retro-dim: #008800;
+  --retro-border: #004400;
+  --retro-accent: #00ffff;
+  --retro-warning: #ffff00;
+  --retro-error: #ff0040;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Retro terminal color utilities */
+  --color-retro-bg: var(--retro-bg);
+  --color-retro-primary: var(--retro-primary);
+  --color-retro-secondary: var(--retro-secondary);
+  --color-retro-dim: var(--retro-dim);
+  --color-retro-border: var(--retro-border);
+  --color-retro-accent: var(--retro-accent);
+  --color-retro-warning: var(--retro-warning);
+  --color-retro-error: var(--retro-error);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Retro gaming font utility */
+.font-pixel {
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* ========== RETRO TERMINAL ANIMATIONS ========== */
+
+/* Basic blinking cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+/* Enhanced typewriter effect */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 3s steps(60, end);
+  border-right: 2px solid var(--retro-primary);
+}
+
+/* Fast typewriter for titles */
+.typewriter-fast {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 1.5s steps(30, end);
+}
+
+/* Glitch text effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-color {
+  0% { 
+    text-shadow: 
+      0.05em 0 0 var(--retro-error),
+      -0.05em -0.025em 0 var(--retro-accent),
+      0.025em 0.05em 0 var(--retro-warning);
+  }
+  15% { 
+    text-shadow: 
+      0.05em 0 0 var(--retro-error),
+      -0.05em -0.025em 0 var(--retro-accent),
+      0.025em 0.05em 0 var(--retro-warning);
+  }
+  16% { text-shadow: none; }
+  49% { text-shadow: none; }
+  50% { 
+    text-shadow: 
+      0.05em 0 0 var(--retro-error),
+      -0.05em -0.025em 0 var(--retro-accent),
+      0.025em 0.05em 0 var(--retro-warning);
+  }
+  99% { 
+    text-shadow: 
+      0.05em 0 0 var(--retro-error),
+      -0.05em -0.025em 0 var(--retro-accent),
+      0.025em 0.05em 0 var(--retro-warning);
+  }
+  100% { text-shadow: none; }
+}
+
+.glitch {
+  animation: 
+    glitch 0.3s infinite,
+    glitch-color 0.6s infinite;
+}
+
+/* Screen flicker effect */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+  }
+}
+
+.flicker {
+  animation: flicker 3s linear infinite;
+}
+
+/* Fade in animation for messages */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading bar animation */
+@keyframes loading {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.loading-bar {
+  animation: loading 2s ease-in-out;
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px var(--retro-primary),
+      0 0 10px var(--retro-primary),
+      0 0 15px var(--retro-primary);
+  }
+  50% {
+    text-shadow: 
+      0 0 10px var(--retro-primary),
+      0 0 20px var(--retro-primary),
+      0 0 30px var(--retro-primary),
+      0 0 40px var(--retro-primary);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ========== CRT MONITOR EFFECTS ========== */
+
+/* Enhanced CRT curvature and effects */
+.crt-monitor {
+  background: radial-gradient(ellipse at center, #000 0%, #111 100%);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-monitor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(
+      90deg,
+      transparent 50%,
+      rgba(0, 255, 0, 0.02) 50%
+    ),
+    linear-gradient(
+      transparent 50%,
+      rgba(0, 255, 0, 0.03) 50%
+    );
+  background-size: 3px 3px, 100% 2px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.crt-monitor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* CRT scanlines with movement - EXCLUDE header and scroll areas */
+.scanlines {
+  position: relative;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 80px; /* Start scanlines below the header */
+  left: 0;
+  right: 0;
+  bottom: 200px; /* Stop scanlines before the bottom input area */
+  background: linear-gradient(
+    transparent 50%,
+    rgba(0, 255, 0, 0.01) 50%
+  );
+  background-size: 100% 8px; /* Larger, more subtle scanlines */
+  pointer-events: none;
+  z-index: -1; /* Put behind everything */
+  animation: scanline-move 0.6s linear infinite; /* Even slower animation */
+}
+
+/* Completely isolate header from any effects */
+.game-header {
+  position: relative;
+  z-index: 100;
+  background: var(--retro-bg);
+  isolation: isolate;
+}
+
+.game-header * {
+  position: relative;
+  z-index: 101;
+}
+
+/* Completely isolate scroll content from scanlines */
+.story-content {
+  position: relative;
+  z-index: 50;
+  background: var(--retro-bg);
+  isolation: isolate;
+}
+
+.story-content * {
+  position: relative;
+  z-index: 51;
+}
+
+/* Native scroll area styling - completely isolated */
+.native-scroll {
+  position: relative;
+  z-index: 50;
+  background: var(--retro-bg);
+  isolation: isolate;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--retro-dim) var(--retro-bg);
+}
+
+.native-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.native-scroll::-webkit-scrollbar-track {
+  background: var(--retro-bg);
+  border: 1px solid var(--retro-border);
+}
+
+.native-scroll::-webkit-scrollbar-thumb {
+  background: var(--retro-dim);
+  border-radius: 0;
+  border: 1px solid var(--retro-border);
+}
+
+.native-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--retro-secondary);
+}
+
+/* Remove any effects from header buttons */
+.header-button {
+  position: relative !important;
+  z-index: 102 !important;
+  background: var(--retro-dim) !important;
+  border: 1px solid var(--retro-border) !important;
+  color: var(--retro-primary) !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+  transform: none !important;
+  animation: none !important;
+  overflow: visible !important;
+}
+
+.header-button:hover {
+  background: var(--retro-secondary) !important;
+  color: var(--retro-bg) !important;
+}
+
+.header-button::before,
+.header-button::after {
+  display: none !important;
+}
+
+.header-button * {
+  animation: none !important;
+  transform: none !important;
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(8px); }
+}
+
+/* Terminal glow effects */
+.terminal-glow {
+  text-shadow: 
+    0 0 5px var(--retro-primary),
+    0 0 10px var(--retro-primary),
+    0 0 15px var(--retro-primary);
+}
+
+.terminal-glow-intense {
+  text-shadow: 
+    0 0 10px var(--retro-primary),
+    0 0 20px var(--retro-primary),
+    0 0 30px var(--retro-primary),
+    0 0 40px var(--retro-primary);
+}
+
+/* ========== MATRIX RAIN EFFECT ========== */
+
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -3; /* Put behind everything */
+  overflow: hidden;
+}
+
+.matrix-rain::before {
+  content: "01001010011010010100101001011010110101001010110101101010101001010110101001010110101101010100101011010100101011010110101010010101101010010101101011010101001010110101001010110101101010100101011010100101011010110101010010101101010010101101011010101001010110101001010110101101010100101011010100101011010110101010010101101010010101101011010101001010110101001010110101101010100101011010100101011010110101010010101101010010101101011010101001010110101001010110101";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(0, 255, 0, 0.05); /* Even more subtle */
+  white-space: pre-wrap;
+  word-break: break-all;
+  animation: matrix-fall 30s linear infinite; /* Much slower */
+}
+
+@keyframes matrix-fall {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* ========== HOLOGRAPHIC EFFECTS ========== */
+
+.hologram {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  background-size: 20px 20px;
+  animation: hologram-scan 3s ease-in-out infinite;
+}
+
+@keyframes hologram-scan {
+  0%, 100% { background-position: 0 0; }
+  50% { background-position: 20px 20px; }
+}
+
+.interference-lines {
+  position: relative;
+}
+
+.interference-lines::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 255, 0.05) 2px,
+    rgba(0, 255, 255, 0.05) 4px
+  );
+  animation: interference-move 0.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes interference-move {
+  0% { transform: translateX(-4px); }
+  100% { transform: translateX(0px); }
+}
+
+/* ========== BUTTON HOVER EFFECTS ========== */
+
+/* Only apply retro effects to buttons with the retro-button class */
+.retro-button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 0, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.retro-button:hover::before {
+  left: 100%;
+}
+
+.retro-button:hover {
+  box-shadow: 
+    0 0 10px rgba(0, 255, 0, 0.5),
+    inset 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+/* ========== BOOT SEQUENCE STYLES ========== */
+
+.boot-sequence {
+  font-family: monospace;
+}
+
+.boot-line {
+  opacity: 0;
+  animation: boot-fade-in 0.5s ease-in forwards;
+}
+
+@keyframes boot-fade-in {
+  to { opacity: 1; }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: var(--retro-bg);
+  border: 1px solid var(--retro-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--retro-dim),
+    var(--retro-primary),
+    var(--retro-dim)
+  );
+  animation: progress-fill 3s ease-in-out forwards;
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
